@@ -1,7 +1,6 @@
 #include "Stack.h"
 #include <iostream>
 
-
 template<typename T>
 Stack<T>::Stack(int size) {
     arr_ = new T[size];
@@ -21,35 +20,34 @@ bool Stack<T>::isEmpty() {
 
 template<typename T>
 bool Stack<T>::isFull() {
-    return top_ == capacity_-1;
+    return top_ == capacity_ - 1;
 }
 
 template<typename T>
 T Stack<T>::pop() {
-    if(isEmpty()){
-        std::cout<<"overflow"<<std::endl;
+    if (isEmpty()) {
+        std::cout << "overflow" << std::endl;
         exit(EXIT_FAILURE);
     }
-    std::cout<<"removing"<< top() << std::endl;
+    std::cout << "removing" << top() << std::endl;
     return arr_[top_--];
 }
 
 template<typename T>
 void Stack<T>::push(T elem) {
-    if (isFull()){
-       std::cout<<"overflow"<<std::endl;
+    if (isFull()) {
+        std::cout << "overflow" << std::endl;
         exit(EXIT_FAILURE);
     }
-    std::cout<<"inserting"<<elem<<std::endl;
-    arr_[++top_]=elem;
+    std::cout << "inserting" << elem << std::endl;
+    arr_[++top_] = elem;
 }
-
 
 template<typename T>
 T Stack<T>::top() {
-    if (!isEmpty()){
+    if (!isEmpty()) {
         return arr_[top_];
-    } else{
+    } else {
         exit(EXIT_FAILURE);
     }
 }
