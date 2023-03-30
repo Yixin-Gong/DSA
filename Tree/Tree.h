@@ -1,9 +1,10 @@
 #pragma once
 
-template<class T>
+template <class T>
 class BinaryTree {
  public:
-  BinaryTree() : root_(nullptr) {};
+  BinaryTree() : root_(nullptr){};
+
  private:
   struct TreeNode {
     T data;
@@ -17,19 +18,21 @@ class BinaryTree {
   void PostOrder(TreeNode *cur);
 };
 
-template<class K, class V>
+template <class K, class V>
 class BST {
  public:
   BST() : root_(nullptr) {}
   void insert(K key, V value);
   void remove(K key);
   V find(K key);
+
  private:
   struct TreeNode {
     K key;
     V value;
     TreeNode *left, *right;
-    explicit TreeNode(K key, V value) : key(key), value(value), left(nullptr), right(nullptr) {}
+    explicit TreeNode(K key, V value)
+        : key(key), value(value), left(nullptr), right(nullptr) {}
   };
   TreeNode *root_;
 
@@ -37,9 +40,6 @@ class BST {
   TreeNode *&_find(TreeNode *&root, K &key) const;
   TreeNode *&_remove(TreeNode *&root, K &key) const;
   void _insert(BST::TreeNode *&root, K &key, V &value) const;
-
 };
 
 #include "Tree.hpp"
-
-
