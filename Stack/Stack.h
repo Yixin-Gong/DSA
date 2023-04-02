@@ -1,8 +1,7 @@
 #pragma onces
 
-template <typename T>
-class Stack {
- public:
+template <typename T> class Stack {
+public:
   explicit Stack(int size = 10);
   ~Stack();
   T pop();
@@ -11,8 +10,8 @@ class Stack {
   bool isEmpty();
   bool isFull();
 
- private:
-  T* arr_;
+private:
+  T *arr_;
   int capacity_;
   int top_;
 };

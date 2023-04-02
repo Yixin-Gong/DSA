@@ -15,22 +15,19 @@ typename List<T>::ListNode *&List<T>::_index_helper(unsigned index,
   }
 }
 
-template <typename T>
-const T &List<T>::operator[](unsigned index) {
+template <typename T> const T &List<T>::operator[](unsigned index) {
   ListNode *&node = _index(index);
   return node->data;
 }
 
-template <typename T>
-void List<T>::insert(const T &data, unsigned int index) {
+template <typename T> void List<T>::insert(const T &data, unsigned int index) {
   auto *new_node = new ListNode(data);
   auto *&node = _index(index);
   new_node->next = node;
   node = new_node;
 }
 
-template <typename T>
-const T &List<T>::remove(unsigned index) {
+template <typename T> const T &List<T>::remove(unsigned index) {
   auto *&node = _index(index);
   auto *tmp = node;
   const T &data = tmp->data;

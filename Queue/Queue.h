@@ -1,6 +1,6 @@
 #pragma once
 
-template <typename T>
+template<typename T>
 class Queue {
  public:
   explicit Queue(int size = 10);
@@ -11,9 +11,8 @@ class Queue {
   bool isFull();
   T top();
   int size();
-
  private:
-  T* arr_;
+  T *arr_;
   int capacity_;
   int front_;
   int rear_;
