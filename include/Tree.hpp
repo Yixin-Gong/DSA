@@ -2,7 +2,7 @@
 
 #include "Tree.h"
 
-template <class T>
+template<class T>
 void BinaryTree<T>::PreOrder(BinaryTree::TreeNode *cur) {
   if (cur) {
     std::cout << cur->data << std::endl;
@@ -11,7 +11,7 @@ void BinaryTree<T>::PreOrder(BinaryTree::TreeNode *cur) {
   }
 }
 
-template <class T>
+template<class T>
 void BinaryTree<T>::InOrder(BinaryTree::TreeNode *cur) {
   if (cur) {
     InOrder(cur->left);
@@ -20,7 +20,7 @@ void BinaryTree<T>::InOrder(BinaryTree::TreeNode *cur) {
   }
 }
 
-template <class T>
+template<class T>
 void BinaryTree<T>::PostOrder(BinaryTree::TreeNode *cur) {
   if (cur) {
     PostOrder(cur->left);
@@ -29,7 +29,7 @@ void BinaryTree<T>::PostOrder(BinaryTree::TreeNode *cur) {
   }
 }
 
-template <class K, class V>
+template<class K, class V>
 typename BST<K, V>::TreeNode *&BST<K, V>::_find(TreeNode *&root, K &key) const {
   if (root == nullptr) {
     return root;
@@ -42,7 +42,7 @@ typename BST<K, V>::TreeNode *&BST<K, V>::_find(TreeNode *&root, K &key) const {
   }
 }
 
-template <class K, class V>
+template<class K, class V>
 void BST<K, V>::_insert(BST::TreeNode *&root, K &key, V &value) const {
   TreeNode *&loc = _find(root, key);
   if (loc == nullptr) {
@@ -50,14 +50,14 @@ void BST<K, V>::_insert(BST::TreeNode *&root, K &key, V &value) const {
   }
 }
 
-template <class K, class V>
+template<class K, class V>
 typename BST<K, V>::TreeNode *&BST<K, V>::_ios(BST::TreeNode *&root) const {
   TreeNode *&cur = root;
   while (cur && cur->left != nullptr) cur = cur->left;
   return cur;
 }
 
-template <class K, class V>
+template<class K, class V>
 typename BST<K, V>::TreeNode *&BST<K, V>::_remove(BST::TreeNode *&root,
                                                   K &key) const {
   if (root == nullptr) {
@@ -84,13 +84,13 @@ typename BST<K, V>::TreeNode *&BST<K, V>::_remove(BST::TreeNode *&root,
   return root;
 }
 
-template <class K, class V>
+template<class K, class V>
 void BST<K, V>::insert(K key, V value) {
   TreeNode *&loc = _find(root_, key);
   return _insert(loc, key, value);
 }
 
-template <class K, class V>
+template<class K, class V>
 V BST<K, V>::find(K key) {
   TreeNode *&loc = _find(root_, key);
   if (loc == nullptr) {
@@ -101,7 +101,7 @@ V BST<K, V>::find(K key) {
   }
 }
 
-template <class K, class V>
+template<class K, class V>
 void BST<K, V>::remove(K key) {
   _remove(root_, key);
 }

@@ -1,13 +1,14 @@
 #pragma once
 
-template <typename T> class List {
-public:
-  List() : head_(nullptr){};
+template<typename T>
+class List {
+ public:
+  List() : head_(nullptr) {};
   const T &operator[](unsigned index);
   void insert(const T &data, unsigned index);
   const T &remove(unsigned index);
 
-private:
+ private:
   struct ListNode {
     T data;
     ListNode *next;

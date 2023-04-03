@@ -1,9 +1,9 @@
 #pragma once
 
-template <class T>
+template<class T>
 class BinaryTree {
  public:
-  BinaryTree() : root_(nullptr){};
+  BinaryTree() : root_(nullptr) {};
 
  private:
   struct TreeNode {
@@ -18,7 +18,7 @@ class BinaryTree {
   void PostOrder(TreeNode *cur);
 };
 
-template <class K, class V>
+template<class K, class V>
 class BST {
  public:
   BST() : root_(nullptr) {}
