@@ -1,7 +1,7 @@
 //
 // Created by eric on 1/31/23.
 //
-#include "../include/List.h"
+#include "../include/List.hpp"
 #include <iostream>
 int main() {
   List<int> list;
